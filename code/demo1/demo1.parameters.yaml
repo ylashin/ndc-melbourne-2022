@@ -1,0 +1,5 @@
+components:
+- name: nv_ds_single_src_input0
+  parameters:
+    uri: file:///opt/nvidia/deepstream/deepstream/samples/streams/sample_1080p_h264.mp4
+name: NvDsSingleSrcInput

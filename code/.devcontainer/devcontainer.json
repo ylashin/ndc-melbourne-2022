@@ -1,0 +1,15 @@
+{
+    "name": "NV-DS6.1",
+    "image": "nvcr.io/nvidia/deepstream:6.1-devel",
+    "runArgs": [
+            "--gpus=all",
+            "--name=ndc-2022-demo", /* You need to use a unique name for every project launched via VSC */
+            "--net=host",
+            "--add-host=host.docker.internal:host-gateway", /* To allow container to access host */
+            "--privileged=true",  /* Needed for Graph Composer. Access to File System of Host computer */
+            "-it",
+            "-v", "/tmp/.X11-unix/:/tmp/.X11-unix/",
+            "-v", "/var/run/docker.sock:/var/run/docker.sock", /*  Needed for Container Builder in Graph Composer */
+            "--env-file", ".devcontainer/devcontainer.env"
+    ]
+}

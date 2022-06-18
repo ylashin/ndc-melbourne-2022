@@ -1,0 +1,153 @@
+application:
+  name: demo1
+---
+dependencies:
+- extension: NvDsSourceExt
+  uuid: a632d022-3425-4848-9074-e6483ef74366
+  version: 1.0.0
+- extension: NvDsBaseExt
+  uuid: 56d7e3ec-62c6-4652-bcc8-4f1c3b00df03
+  version: 1.0.0
+- extension: NvDsMuxDemuxExt
+  uuid: 89b8398c-5820-4051-835c-a91f2d49766b
+  version: 1.0.0
+- extension: NvDsInferenceExt
+  uuid: 0b02963e-c24e-4c13-ace0-c4cdf36c7c71
+  version: 1.0.0
+- extension: NvDsSampleModelsExt
+  uuid: 909dc1ea-c654-44c1-97a3-0b8fec12141a
+  version: 1.0.0
+- extension: NvDsVisualizationExt
+  uuid: 25903cd4-fc5c-4139-987b-47bb27e8b424
+  version: 1.0.1
+- extension: NvDsOutputSinkExt
+  uuid: 3fc9ad87-03e7-47a8-bbfc-8501c3f7ff2f
+  version: 1.0.0
+---
+components:
+- name: nv_ds_single_src_input0
+  parameters:
+    audio-out-%u: nv_ds_dynamic_output2
+    uri: source-video
+    video-out-%u: nv_ds_dynamic_output1
+  type: nvidia::deepstream::NvDsSingleSrcInput
+- name: nv_ds_dynamic_output1
+  type: nvidia::deepstream::NvDsDynamicOutput
+- name: nv_ds_dynamic_output2
+  type: nvidia::deepstream::NvDsDynamicOutput
+name: NvDsSingleSrcInput
+ui_property:
+  position:
+    x: -500.0
+    y: 0.0
+---
+components:
+- name: nv_ds_stream_mux3
+  parameters:
+    batch-size: 1
+    height: 1080
+    video-in-%u: nv_ds_on_request_input4
+    video-out: nv_ds_static_output5
+    width: 1920
+  type: nvidia::deepstream::NvDsStreamMux
+- name: nv_ds_on_request_input4
+  type: nvidia::deepstream::NvDsOnRequestInput
+- name: nv_ds_static_output5
+  type: nvidia::deepstream::NvDsStaticOutput
+name: NvDsStreamMux
+ui_property:
+  position:
+    x: -100.00000762939453
+    y: 0.0
+---
+components:
+- name: nv_ds_connection6
+  parameters:
+    source: NvDsSingleSrcInput/nv_ds_dynamic_output1
+    target: NvDsStreamMux/nv_ds_on_request_input4
+  type: nvidia::deepstream::NvDsConnection
+name: node0
+---
+components:
+- name: nv_ds_infer_video7
+  parameters:
+    infer-model-config: nv_ds_resnet10_4_class_detector_model11
+    video-in: nv_ds_static_input9
+    video-out: nv_ds_static_output8
+  type: nvidia::deepstream::NvDsInferVideo
+- name: nv_ds_static_output8
+  type: nvidia::deepstream::NvDsStaticOutput
+- name: nv_ds_static_input9
+  type: nvidia::deepstream::NvDsStaticInput
+- name: nv_ds_resnet10_4_class_detector_model11
+  type: nvidia::deepstream::NvDsResnet10_4ClassDetectorModel
+name: NvDsInferVideo
+ui_property:
+  position:
+    x: 142.0001220703125
+    y: 44.00006103515625
+---
+components:
+- name: nv_ds_connection10
+  parameters:
+    source: NvDsStreamMux/nv_ds_static_output5
+    target: NvDsInferVideo/nv_ds_static_input9
+  type: nvidia::deepstream::NvDsConnection
+name: node1
+---
+components:
+- name: nv_ds_osd12
+  parameters:
+    video-in: nv_ds_static_input14
+    video-out: nv_ds_static_output13
+  type: nvidia::deepstream::NvDsOSD
+- name: nv_ds_static_output13
+  type: nvidia::deepstream::NvDsStaticOutput
+- name: nv_ds_static_input14
+  type: nvidia::deepstream::NvDsStaticInput
+name: NvDsOSD
+ui_property:
+  position:
+    x: 432.0001220703125
+    y: 114.00006103515625
+---
+components:
+- name: nv_ds_connection15
+  parameters:
+    source: NvDsInferVideo/nv_ds_static_output8
+    target: NvDsOSD/nv_ds_static_input14
+  type: nvidia::deepstream::NvDsConnection
+name: node2
+---
+components:
+- name: nv_ds_rtsp_out16
+  parameters:
+    audio-in: nv_ds_on_request_input17
+    video-in: nv_ds_on_request_input18
+  type: nvidia::deepstream::NvDsRtspOut
+- name: nv_ds_on_request_input17
+  type: nvidia::deepstream::NvDsOnRequestInput
+- name: nv_ds_on_request_input18
+  type: nvidia::deepstream::NvDsOnRequestInput
+name: NvDsRtspOut
+ui_property:
+  position:
+    x: 689.7889404296875
+    y: 174.21994018554688
+---
+components:
+- name: nv_ds_connection19
+  parameters:
+    source: NvDsOSD/nv_ds_static_output13
+    target: NvDsRtspOut/nv_ds_on_request_input18
+  type: nvidia::deepstream::NvDsConnection
+name: node3
+---
+components:
+- name: nv_ds_scheduler20
+  type: nvidia::deepstream::NvDsScheduler
+name: NvDsScheduler
+ui_property:
+  position:
+    x: 216.02749633789062
+    y: 353.8250427246094

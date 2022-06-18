@@ -2,17 +2,19 @@
 
 Demos source, resources and presentation.
 
+## Demos
 
+- [Demo1 - Basic Object Detection](./demo1/README.md)
 
-# Resources
+## Resources
 
-## Setup
+### Setup
 
 - [DeepStream Getting Started | NVIDIA Developer](https://developer.nvidia.com/deepstream-getting-started)
 - [Setup on dGPU](https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_Quickstart.html#dgpu-setup-for-ubuntu)
 
 
-## Development
+### Development
 
 - [DeepStream Developer Guide](https://docs.nvidia.com/metropolis/deepstream/dev-guide/)
 - [Graph Composer - getting started](https://docs.nvidia.com/metropolis/deepstream/dev-guide/graphtools-docs/docs/text/GraphComposer_Getting_Started.html)
@@ -29,13 +31,13 @@ Demos source, resources and presentation.
 - [Managing Video Streams in Runtime with the NVIDIA DeepStream SDK](https://developer.nvidia.com/blog/managing-video-streams-in-runtime-with-the-deepstream-sdk/)
 
 
-## Videos & blogs
+### Videos & blogs
 
 - [How To Develop and Optimize Edge AI apps with NVIDIA DeepStream](https://www.nvidia.com/en-us/on-demand/session/gtcspring22-s41777/)
 - [A bit old quickstart on DS 5.0 but still useful](https://blog.ml6.eu/nvidia-deepstream-quickstart-9147dd49a15d)
 
 
-## Tools & troubleshooting tips
+### Tools & troubleshooting tips
 
 - [Run GUI APPs inside a Docker Container](https://medium.com/geekculture/run-a-gui-software-inside-a-docker-container-dce61771f9)
 - [RTSP simple server](https://github.com/aler9/rtsp-simple-server)
