@@ -13,6 +13,10 @@ The graph should simply contain the following components:
 - NvDsVideoRenderer or RTSP
 - NvDsScheduler
 
+
+<img width="1324" alt="image" src="https://user-images.githubusercontent.com/2197158/174426433-9cbf9e31-3a2a-49f4-b638-b20d4659fea9.png">
+
+
 Create parameter files and set video URI to `file:///opt/nvidia/deepstream/deepstream/samples/streams/sample_1080p_h264.mp4`
 
 
