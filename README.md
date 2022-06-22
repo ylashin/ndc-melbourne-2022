@@ -4,11 +4,11 @@ Demos source, resources and presentation.
 
 ## Demos
 
-- [Demo1 - Basic Object Detection](./demo1/README.md)
-- [Demo2 - Object Tracking and cascaded inference](./demo2/README.md)
-- [Demo3 - Integration with message brokers (e.g. Azure IoT Hub)](./demo3/README.md)
-- [Demo4 - Cloud to device messaging and smart record](./demo4/README.md)
-- [Demo5 - Analytics on inference results](./demo5/README.md)
+- [Demo1 - Basic Object Detection](./code/demo1/README.md)
+- [Demo2 - Object Tracking and cascaded inference](./code/demo2/README.md)
+- [Demo3 - Integration with message brokers (e.g. Azure IoT Hub)](./code/demo3/README.md)
+- [Demo4 - Cloud to device messaging and smart record](./code/demo4/README.md)
+- [Demo5 - Analytics on inference results](./code/demo5/README.md)
 
 ## Resources
 
