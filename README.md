@@ -5,6 +5,10 @@ Demos source, resources and presentation.
 ## Demos
 
 - [Demo1 - Basic Object Detection](./demo1/README.md)
+- [Demo2 - Object Tracking and cascaded inference](./demo2/README.md)
+- [Demo3 - Integration with message brokers (e.g. Azure IoT Hub)](./demo3/README.md)
+- [Demo4 - Cloud to device messaging and smart record](./demo4/README.md)
+- [Demo5 - Analytics on inference results](./demo5/README.md)
 
 ## Resources
 
@@ -42,3 +46,6 @@ Demos source, resources and presentation.
 - [Run GUI APPs inside a Docker Container](https://medium.com/geekculture/run-a-gui-software-inside-a-docker-container-dce61771f9)
 - [RTSP simple server](https://github.com/aler9/rtsp-simple-server)
 - [Fix VLC RTSP playback issue]( https://mynuuo.zendesk.com/hc/en-us/articles/360004120753-How-to-setup-and-configure-VLC-player-to-retrieve-camera-RTSP-streaming-)
+
+
+

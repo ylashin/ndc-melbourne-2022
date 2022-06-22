@@ -1,0 +1,17 @@
+components:
+- name: nv_ds_msg_conv_broker61..4748
+  parameters:
+    disable-msgconv: false
+    msg-broker-conn-str: <<Azure IoT Hub device connection string>>
+    msg-broker-proto-lib: /opt/nvidia/deepstream/deepstream/lib/libnvds_azure_proto.so
+    msg-conv-config: /workspaces/devenv1/demo3/demo3-msg-config.txt
+    msg-conv-payload-type: 1
+    multiple-payloads: true
+    new-api: true
+name: NvDsMsgConvBroker..bb00
+---
+components:
+- name: nv_ds_single_src_input39..3c18
+  parameters:
+    file-loop: true
+name: NvDsSingleSrcInput..1b00
