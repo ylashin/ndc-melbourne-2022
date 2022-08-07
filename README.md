@@ -40,6 +40,7 @@ Demos source, resources and presentation.
 - [How To Develop and Optimize Edge AI apps with NVIDIA DeepStream](https://www.nvidia.com/en-us/on-demand/session/gtcspring22-s41777/)
 - [A bit old quickstart on DS 5.0 but still useful](https://blog.ml6.eu/nvidia-deepstream-quickstart-9147dd49a15d)
 - [NVIDIA DeepStream development with Microsoft Azure](https://docs.microsoft.com/en-au/learn/paths/nvidia-deepstream-development-with-microsoft-azure/)
+- [Creating a Real-Time License Plate Detection and Recognition App](https://developer.nvidia.com/blog/creating-a-real-time-license-plate-detection-and-recognition-app/)
 
 ### Tools & troubleshooting tips
 
